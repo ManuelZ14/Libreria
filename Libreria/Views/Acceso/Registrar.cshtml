@@ -27,44 +27,49 @@
                 </div>
                 <br />
                 <div>
-                    <form action="@Url.Action("Login","Acceso")" method="post">
+                    <form action="@Url.Action("Registrar","Acceso")" method="post">
                         <div class="input-group mb-3">
                             <div class="input-group-append">
                                 <span class="input-group-text"><i class="fas fa-envelope"></i></span>
                             </div>
                             <input type="text" name="Correo" class="form-control input_user" value="" placeholder="correo">
                         </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-append">
+                                <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                            </div>
+                            <input type="password" name="Clave" class="form-control input_user" value="" placeholder="Contraseña">
+                        </div>
                         <div class="input-group mb-2">
                             <div class="input-group-append">
                                 <span class="input-group-text"><i class="fas fa-key"></i></span>
                             </div>
-                            <input type="password" name="Clave" class="form-control input_pass" value="" placeholder="contraseña">
+                            <input type="password" name="ConfirmarClave" class="form-control input_pass" value="" placeholder="Confirmar Contraseña">
                         </div>
                         <div class="form-group">
                         </div>
 
-                        @if (ViewData["Mensaje"] != null)
-                        { 
+                        @if (ViewData["pMensaje"] != null)
+                        {
 
-                        <div class="alert alert-danger" role="alert">
+                            <div class="alert alert-danger" role="alert">
 
-                          @ViewData["Mensaje"]
+                                @ViewData["pMensaje"]
 
-                        </div>
+                            </div>
 
                         }
-
-
                         <div class="d-flex justify-content-center mt-3 login_container">
-                            <button type="submit" name="button" class="btn login_btn">Iniciar sesion</button>
+                            <button type="submit" name="button" class="btn login_btn">Registrarse</button>
                         </div>
                     </form>
                 </div>
-
                 <div class="mt-4">
                     <div class="d-flex justify-content-center links">
-                        no tienes una cuenta? <a href="@Url.Action("Registrar","Acceso")" class="ml-2">Registrate</a>
+                        ya tienes una cuenta? <a href="@Url.Action("Login","Acceso")" class="ml-2">Iniciar Sesion</a>
                     </div>
+                    <br />
+                    <br />
                     <br />
                     <br />
                 </div>
